@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Play Emojemon - Battle Your Favourite Emojis!</title>
+	<meta name="viewport" content="width=1080px">
+    <meta name="description" content="Use Charizard to battle your favourite emojis in this JS-only game" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link href="app.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-79848874-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+
+
+<body id="frame">
+    <div id="soundtrack">
+        <iframe id="sc-widget" width="90%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/206072442&amp;color=eac61c&amp;inverse=false&amp;auto_play=true&amp;show_user=false"></iframe>
+    </div>
+    <iframe src="http://www.zakrowling.com/emojemon/game.html" height="100%" width="100%"></iframe>
+
+    <a href="javascript:;" class="mobile-play" style="display:none"></a>
+
+    <audio loop id="mobile-soundtrack">
+        <source src="sounds/mobile-soundtrack.mp3">
+    </audio>
+	
+</body>
+
+<script type="text/javascript">
+    var themeDuration = 136000;
+    setInterval(function(){
+          widget = document.getElementById('sc-widget').src += '';
+          widget.contentWindow.location.reload();
+    }, themeDuration);
+
+</script>
+</html>

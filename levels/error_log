@@ -1,0 +1,9 @@
+[16-Apr-2016 02:13:56 UTC] PHP Parse error:  syntax error, unexpected 'emoji_attacks' (T_STRING) in /home/weakling/public_html/emojemon/levels/bee.php on line 41
+[16-Apr-2016 02:14:38 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ',' or ';' in /home/weakling/public_html/emojemon/levels/bee.php on line 41
+[16-Apr-2016 02:54:07 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 02:55:34 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 03:04:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 03:06:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 03:08:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 03:09:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/weakling/public_html/emojemon/gameover.php on line 7
+[16-Apr-2016 07:06:25 UTC] PHP Parse error:  syntax error, unexpected 'Pullup' (T_STRING), expecting ')' in /home/weakling/public_html/emojemon/levels/05-poo.php on line 18

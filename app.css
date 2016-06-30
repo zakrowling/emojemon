@@ -1,0 +1,652 @@
+/*  -------------------------------------------------------------
+    Iframe Overrides
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+body#frame {
+    background: none;
+}
+
+body#frame a.mobile-play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#soundtrack {
+    position: fixed;
+    top: 0;
+    display: block;
+    padding: 15px 15px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+
+}
+
+
+/*  -------------------------------------------------------------
+    Load Custom Font
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@font-face {
+  font-family: 'FireRed';
+  src: url('firered.ttf') format('truetype');
+}
+
+
+/*  -------------------------------------------------------------
+    Page Styles
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+body {
+	background: #2c5777 url('images/bg.jpg') repeat-x top left;
+	color: #4c484a;
+	font: 25px / 53px 'FireRed', monospace;
+        height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+h1,h2,h3,h4,h5 {
+	font-size: 25px;
+	line-height: 53px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1080px;
+}
+
+#game {
+	position: relative;
+	overflow: hidden;
+	width: 1080px;
+	height: 750px;
+	background: url('images/battle_bg.png') top center no-repeat;
+}
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+
+/*  -------------------------------------------------------------
+    Home
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+body#home {
+ 	overflow: hidden;
+ 	text-align: center;
+ 	background: #94cc7c url('images/start_bg.png') top left repeat;
+ 	-webkit-background-size: 1200px;
+	-moz-background-size: 1200px;
+	-o-background-size: 1200px;
+	background-size: 1200px;
+	-webkit-animation: homescreen-animate 12s linear infinite;
+	-moz-animation: homescreen-animate 12s linear infinite;
+	animation: homescreen-animate 12s linear infinite;
+}
+
+body#home .container {
+ 	display: table;
+ 	height: 100%;
+}
+
+body#home .home-title {
+ 	display: table-cell;
+    vertical-align: middle;
+    width: 718px;
+    margin: 0 auto;
+    color: #fff;
+ 	-webkit-animation: fadeup 3s ease 1;
+	-moz-animation: fadeup 3s ease 1;
+	animation: fadeup 3s ease 1;
+}
+
+body#home h3,
+body#home h4,
+body#home p {
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.9);
+}
+
+body#home h4 {
+        font-size: 0.8em;
+        padding-bottom: 0;
+        line-height: 0;
+        text-transform: uppercase;
+}
+
+body#home small {
+	font-size: 0.5em;
+	line-height: 1.4em;
+}
+
+body#home a.start-battle:link,
+body#home a.start-battle:visited {
+	display: inline-block;
+	margin: 10px 0;
+	padding: 8px 0 4px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: none;
+	color: #ffffff;
+	border-radius: 50px;
+	box-shadow: 0 6px 0 #132573;
+	background: #374a9f;
+}
+
+body#home a.start-battle:hover {
+	color: #374a9f;
+	box-shadow: 0 6px 0 #c3a20b;
+	background: #eac61c;
+}
+
+body#home #game {
+	display: none;
+}
+
+
+/*  -------------------------------------------------------------
+    Battle Intro
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+#intro {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	z-index: 1000;
+	background: #fff;
+	-webkit-transition: background-color 2s linear;
+	-moz-transition: background-color 2s linear;
+	transition: background-color 2s linear;
+}
+
+#intro h2 {
+	position: absolute;
+	width: 950px;
+	top: 48%;
+	right: 0;
+	left: 0;
+	margin: auto;
+	z-index: 2000;
+	color: #fff;
+	-webkit-animation: fadeup 1s ease 1;
+	-moz-animation: fadeup 1s ease 1;
+	animation: fadeup 1s ease 1;
+}
+
+#intro h2 strong {
+	text-transform: uppercase;
+}
+
+#intro .top-panel,
+#intro .bottom-panel {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	background: #000;
+}
+
+#intro .top-panel {
+	top: 0;
+	-webkit-transition: top 3s linear;
+	-moz-transition: top 3s linear;
+	transition: top 3s linear;
+}
+
+#intro .bottom-panel {
+	bottom: 0;
+	-webkit-transition: bottom 3s linear;
+	-moz-transition: bottom 3s linear;
+	transition: bottom 3s linear;
+}
+
+#intro.animate {
+	background: rgba(0,0,0,0);
+}
+
+#intro.animate .top-panel {
+	top: -2200px;
+}
+
+#intro.animate .bottom-panel {
+	bottom: -2200px;
+}
+
+
+
+/*  -------------------------------------------------------------
+    Game Styles
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+body.startgame #game,
+#game .player-attack-list {
+	display: none;
+}
+
+#game.player-attack .player-attack-list {
+	display: block;
+}
+
+.gameover {
+	position: absolute;
+	top: 540px;
+        left: 0;
+        right: 0;
+        margin: auto;
+	color: #fff;
+	width: 900px;
+        padding: 0 100px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.gameover a:link,
+.gameover a:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.gameover a:hover {
+	border-bottom: 4px #ffffff solid;
+}
+
+.gameover a.rematch {
+	float: left;
+}
+
+.gameover a.next {
+	float: right;
+}
+
+
+
+/*  Health Bars
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+#game .playerone .health-title,
+#game .opponent .health-title,
+#game .playerone .wins {
+	position: absolute;
+	top: 328px;
+	left: 647px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+}
+
+#game .opponent .health-title {
+	top: 67px;
+	left: 100px;
+}
+
+#game .health {
+	transition: background-color 4s ease;
+}
+
+#game .healthbar {
+	background: #90EE90;
+	height: 13px;
+	text-indent: 9999px;
+}
+
+#game .healthbar.orange {
+	background: #ecda11;
+}
+
+#game .healthbar.red {
+	background: #f44141;
+}
+
+#game .playerone .health,
+#game .opponent .health {
+	position: absolute;
+	width: 216px;
+	top: 411px;
+	right: 80px;
+}
+
+#game .opponent .health {
+	top: 150px;
+	left: 235px;
+}
+
+#game .playerone .wins {
+	top: 406px;
+	left: 850px;
+	font-size: 0.7em;
+}
+
+
+/*  Fadeup Animation
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@-moz-keyframes fadeup {
+    0% {
+        -moz-transform: translateY(50px);
+	opacity: 0;
+    }
+    100% {
+        -moz-transform: translateY(0);
+	opacity: 1;
+    }
+}
+@-webkit-keyframes fadeup {
+    0% {
+        -webkit-transform: translateY(50px);
+	opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+	opacity: 1;
+    }
+}
+@keyframes fadeup {
+    0% {
+        transform: translateY(50px);
+	opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+	opacity: 1;
+    }
+}
+
+/*  Homescreen Animation
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@keyframes homescreen-animate {
+	from { background-position: 0 0; }
+	to { background-position: 1200px 0; }
+}
+
+@-moz-keyframes homescreen-animate {
+	from { background-position: 0 0; }
+	to { background-position: 1200px 0; }
+}
+
+@-webkit-keyframes homescreen-animate {
+	from { background-position: 0 0; }
+	to { background-position: 1200px 0; }
+}
+
+
+/*  Hit Animation
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@-moz-keyframes hit-animate {
+    0% {
+        -moz-transform: translateX(20px);
+		opacity: 0;
+    }
+    50% {
+        -moz-transform: translateX(-20px);
+    }
+    100% {
+        -moz-transform: translateX(0px);
+		opacity: 1;
+    }
+}
+@-webkit-keyframes hit-animate {
+    0% {
+        -webkit-transform: translateX(20px);
+		opacity: 0;
+    }
+    50% {
+        -webkit-transform: translateX(-20px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+		opacity: 1;
+    }
+}
+@keyframes hit-animate {
+    0% {
+        transform: translateX(20px);
+		opacity: 0;
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+		opacity: 1;
+    }
+}
+
+
+/*  Opponent Faint Animation
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@-moz-keyframes opponent-faint-animate {
+    0% {
+        -moz-transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: translateX(100px);
+        opacity: 0;
+        -webkit-transform: scale(0.7,0.7);
+        transform: scale(0.7,0.7);
+    }
+}
+@-webkit-keyframes opponent-faint-animate {
+    0% {
+        -webkit-transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(100px);
+        opacity: 0;
+        -webkit-transform: scale(0.7,0.7);
+        transform: scale(0.7,0.7);
+    }
+}
+@keyframes opponent-faint-animate {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100px);
+        opacity: 0;
+        -webkit-transform: scale(0.7,0.7);
+        transform: scale(0.7,0.7);
+    }
+}
+
+/*  Faint Animation
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+@-moz-keyframes faint-animate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes faint-animate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes faint-animate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*  Avatars
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+#game .playerone .avatar {
+	position: absolute;
+	top: 259px;
+	left: 118px;
+}
+
+#game .opponent .avatar {
+	float: right;
+	text-align: center;
+	width: 570px;
+	padding: 90px 0 0 0;
+} 
+
+#game .avatar.hit {
+	-moz-animation-name: hit-animate;
+	-moz-animation-iteration-count: 3;
+	-moz-animation-timing-function: ease;
+	-moz-animation-duration: 0.2s;
+
+	-webkit-animation-name: hit-animate;
+	-webkit-animation-iteration-count: 3;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 0.2s;
+
+	animation-name: hit-animate;
+	animation-iteration-count: 3;
+	animation-timing-function: ease;
+	animation-duration: 0.2s;
+}
+
+#game .avatar.fainted {
+	opacity: 0;
+	-moz-animation-name: faint-animate;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	-moz-animation-duration: 2s, 2s;
+
+	-webkit-animation-name: faint-animate;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 2s, 2s;
+
+	animation-name: faint-animate;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-duration: 2s, 2s;
+}
+
+#game .opponent .avatar.fainted {
+        -moz-animation-name: opponent-faint-animate;
+	-webkit-animation-name: opponent-faint-animate;
+	animation-name: opponent-faint-animate;
+}
+
+#game .opponent .avatar.flamed {
+	background: url('images/flame.gif') 50% 95% no-repeat,
+				url('images/flame.gif') 65% 87% no-repeat,
+				url('images/flame.gif') 35% 87% no-repeat;
+	background-size: 95px;
+}
+
+#game .opponent .avatar.flamed img {
+	opacity: 0.5;
+}
+
+#game .opponent .avatar.watered {
+	background: url('images/stone.gif') 50% 100% no-repeat,
+				url('images/stone.gif') 65% 87% no-repeat,
+				url('images/stone.gif') 35% 87% no-repeat;
+	background-size: 160px;
+}
+
+#game .opponent .avatar.watered img {
+	opacity: 0.5;
+}
+
+#game .narrator {
+	position: absolute;
+	top: 540px;
+	left: 100px;
+	width: 75%;
+	color: #efefef;
+}
+
+#game a:link,
+#game a:visited {
+	display: block;
+	float: left;
+	padding: 0 0 10px 0;
+	width: 50%;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: rgba(255,255,255,0.6);	
+}
+
+#game a:hover {
+	color: #fff;
+}
+
+/*  -------------------------------------------------------------
+    Mobile Updates (JS Check)
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+
+body#home.mobile .home-title a.start-battle {
+	margin: 22px 0;
+	padding: 18px 0 10px 0;
+	font-size: 1.8em;
+}
+
+body.mobile,
+body.mobile #game {
+        overflow-x: hidden;
+	height: 100vh;
+}
+
+body.mobile #game .narrator {
+	left: 0;
+	padding: 0 5%;
+	width: 90%;
+}
+
+body.mobile #game .narrator,
+body.mobile #game .narrator h3,
+body.mobile #intro h2,
+body.mobile .gameover a:link,
+body.mobile .gameover a:visited {
+	font-size: 48px;
+	line-height: 2.3em;
+}
+
+body.mobile #game a:hover,
+body.mobile #game a:link
+body.mobile #game a:visited {
+	color: #5a9cc3;
+}
+
+body.mobile #game .player-attack-list {
+	text-align: center;
+}
+
+body.mobile #game .player-attack-list a:link,
+body.mobile #game .player-attack-list a:visited {
+	float: none;
+	padding: 15px 0;
+	width: 100%;
+}
+
+body.mobile .gameover a.rematch,
+body.mobile .gameover a.next {
+	display: block;
+	padding: 30px 0;
+	float: none;
+}
+
